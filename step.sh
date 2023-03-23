@@ -23,7 +23,7 @@ set -ex
 
 MESSAGE="🚨⚠️ *$BITRISE_APP_TITLE*: Сборка $BITRISE_BUILD_NUMBER отвалилась 🗿\nСсылка (Bitrise): $BITRISE_APP_URL"
 if [ ! -z "$BITRISE_GIT_MESSAGE" -a "$BITRISE_GIT_MESSAGE" != " "] ; then MESSAGE+="\nСообщение: $BITRISE_GIT_MESSAGE" ; fi
-MESSAGE+= \n\n $custom_message"
+MESSAGE+= "\n\n $custom_message"
 
 if [ $BITRISE_BUILD_STATUS -eq 0 ] ; then 
 	MESSAGE="✅ <b>$BITRISE_APP_TITLE</b>: Сборка $BITRISE_BUILD_NUMBER успешна! "
