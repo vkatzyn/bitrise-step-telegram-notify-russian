@@ -20,7 +20,7 @@ set -ex
 # The exit code of your Step is very important. If you return
 #  with a 0 exit code `bitrise` will register your Step as "successful".
 # Any non zero exit code will be registered as "failed" by `bitrise`.
-
+BITRISE_BUILD_STATUS=0
 MESSAGE="🚨⚠️ *$BITRISE_APP_TITLE*: Сборка $BITRISE_BUILD_NUMBER отвалилась 🗿\nСсылка (Bitrise): $BITRISE_APP_URL"
 if [ ! -z "$BITRISE_GIT_MESSAGE" -a "$BITRISE_GIT_MESSAGE" != " " ] ; then MESSAGE+="\nСообщение: $BITRISE_GIT_MESSAGE" ; fi
 MESSAGE+="\n\n $custom_message"
@@ -28,25 +28,25 @@ MESSAGE+="\n\n $custom_message"
 if [ $BITRISE_BUILD_STATUS -eq 0 ] ; then 
 	MESSAGE="✅ <b>$BITRISE_APP_TITLE</b>: Сборка $BITRISE_BUILD_NUMBER успешна! "
 	NUM=$(shuf -i 0-18 -n 1)
-	if [ $NUM -eq 0 ] ; then MESSAGE+="Блистательно 🏅"
-	if [ $NUM -eq 1 ] ; then MESSAGE+="Восхитительно 🏆"
-	if [ $NUM -eq 2 ] ; then MESSAGE+="Изумительно 🍾"
-	if [ $NUM -eq 3 ] ; then MESSAGE+="Волшебно 🪄"
-	if [ $NUM -eq 4 ] ; then MESSAGE+="Чудно 💫"
-	if [ $NUM -eq 5 ] ; then MESSAGE+="Потрясающе 🔥"
-	if [ $NUM -eq 6 ] ; then MESSAGE+="Шикарно 👑"
-	if [ $NUM -eq 7 ] ; then MESSAGE+="Дивно 🤌"
-	if [ $NUM -eq 8 ] ; then MESSAGE+="Великолепно 🤝"
-	if [ $NUM -eq 9 ] ; then MESSAGE+="Превосходно 🤩"
-	if [ $NUM -eq 10 ] ; then MESSAGE+="Блестяще 🎆"
-	if [ $NUM -eq 11 ] ; then MESSAGE+="🅰️🅱️🅾️🅱️🅰️"
-	if [ $NUM -eq 12 ] ; then MESSAGE+="Замечательно 🎇"
-	if [ $NUM -eq 13 ] ; then MESSAGE+="Красиво 🌠"
-	if [ $NUM -eq 14 ] ; then MESSAGE+="Прекрасно 🌟"
-	if [ $NUM -eq 15 ] ; then MESSAGE+="Божественно ✨"
-	if [ $NUM -eq 16 ] ; then MESSAGE+="Мощно 🦾"
-	if [ $NUM -eq 17 ] ; then MESSAGE+="Норм."
-	if [ $NUM -eq 18 ] ; then MESSAGE+="Пойдет."
+	if [ $NUM -eq 0 ] ; then MESSAGE+="Блистательно 🏅" ; fi
+	if [ $NUM -eq 1 ] ; then MESSAGE+="Восхитительно 🏆" ; fi
+	if [ $NUM -eq 2 ] ; then MESSAGE+="Изумительно 🍾" ; fi
+	if [ $NUM -eq 3 ] ; then MESSAGE+="Волшебно 🪄" ; fi
+	if [ $NUM -eq 4 ] ; then MESSAGE+="Чудно 💫" ; fi
+	if [ $NUM -eq 5 ] ; then MESSAGE+="Потрясающе 🔥" ; fi 
+	if [ $NUM -eq 6 ] ; then MESSAGE+="Шикарно 👑" ; fi 
+	if [ $NUM -eq 7 ] ; then MESSAGE+="Дивно 🤌" ; fi 
+	if [ $NUM -eq 8 ] ; then MESSAGE+="Великолепно 🤝" ; fi 
+	if [ $NUM -eq 9 ] ; then MESSAGE+="Превосходно 🤩" ; fi 
+	if [ $NUM -eq 10 ] ; then MESSAGE+="Блестяще 🎆" ; fi
+	if [ $NUM -eq 11 ] ; then MESSAGE+="🅰️🅱️🅾️🅱️🅰️" ; fi 
+	if [ $NUM -eq 12 ] ; then MESSAGE+="Замечательно 🎇" ; fi 
+	if [ $NUM -eq 13 ] ; then MESSAGE+="Красиво 🌠" ; fi
+	if [ $NUM -eq 14 ] ; then MESSAGE+="Прекрасно 🌟" ; fi 
+	if [ $NUM -eq 15 ] ; then MESSAGE+="Божественно ✨" ; fi 
+	if [ $NUM -eq 16 ] ; then MESSAGE+="Мощно 🦾" ; fi
+	if [ $NUM -eq 17 ] ; then MESSAGE+="Норм." ; fi
+	if [ $NUM -eq 18 ] ; then MESSAGE+="Пойдет." ; fi
 	if [ ! -z "$BITRISE_GIT_MESSAGE" -a "$BITRISE_GIT_MESSAGE" != " " ] ; then MESSAGE+="\nСообщение: $BITRISE_GIT_MESSAGE" ; fi
 	MESSAGE+="\n\nСсылки на скачивание ⬇️: $download_url \n\n$custom_message"
 fi
