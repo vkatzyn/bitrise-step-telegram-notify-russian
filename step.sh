@@ -20,7 +20,6 @@ set -ex
 # The exit code of your Step is very important. If you return
 #  with a 0 exit code `bitrise` will register your Step as "successful".
 # Any non zero exit code will be registered as "failed" by `bitrise`.
-BITRISE_BUILD_STATUS=0
 MESSAGE="🚨⚠️ *$BITRISE_APP_TITLE*: Сборка $BITRISE_BUILD_NUMBER отвалилась 🗿\nСсылка (Bitrise): $BITRISE_APP_URL"
 if [ ! -z "$BITRISE_GIT_MESSAGE" -a "$BITRISE_GIT_MESSAGE" != " " ] ; then MESSAGE+="\nСообщение: $BITRISE_GIT_MESSAGE" ; fi
 MESSAGE+="\n\n $custom_message"
