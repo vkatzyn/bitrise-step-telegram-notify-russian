@@ -47,8 +47,9 @@ if [ $BITRISE_BUILD_STATUS -eq 0 ] ; then
 	if [ $NUM -eq 17 ] ; then MESSAGE+="Норм." ; fi
 	if [ $NUM -eq 18 ] ; then MESSAGE+="Пойдет." ; fi
 	if [ ! -z "$BITRISE_GIT_MESSAGE" -a "$BITRISE_GIT_MESSAGE" != " " ] ; then MESSAGE+="\nСообщение: $BITRISE_GIT_MESSAGE" ; fi
-	MESSAGE+="\n\nСсылки на скачивание ⬇️: $download_url \n\n$custom_message"
 fi
+if [ ! -z "$download_url" -a "$download_url" != " " ] ; then MESSAGE+="\n\nСсылки на скачивание ⬇️: $download_url" ; fi
+MESSAGE+="\n\n$custom_message" 
 
 payload="{ \"chat_id\": \"'${telegram_chat_id}'\", \"text\":\"$MESSAGE\", \"parse_mode\": \"HTML\" }"
 
