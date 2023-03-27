@@ -48,6 +48,7 @@ if [ $BITRISE_BUILD_STATUS -eq 0 ] ; then
 	if [ $NUM -eq 18 ] ; then MESSAGE+="Пойдет." ; fi
 	if [ ! -z "$BITRISE_GIT_MESSAGE" -a "$BITRISE_GIT_MESSAGE" != " " ] ; then MESSAGE+="\nСообщение: $BITRISE_GIT_MESSAGE" ; fi
 fi
+if [ ! -z "$GOOGLE_PLAY_DEPLOY_STATUS" -a ! -z "$download_url" ] ; then MESSAGE+="\Собранные файлы не удалось загрузить в Google Play. Но можно их скачать."
 if [ ! -z "$download_url" -a "$download_url" != " " ] ; then MESSAGE+="\n\nСсылки на скачивание ⬇️: $download_url" ; fi
 MESSAGE+="\n\n$custom_message" 
 
