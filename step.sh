@@ -29,7 +29,7 @@ if [ $BITRISE_BUILD_STATUS -eq 0 ] ; then
 	NUM=$(shuf -i 0-18 -n 1)
 	if [ $NUM -eq 0 ] ; then MESSAGE+="Блистательно 🏅" ; fi
 	if [ $NUM -eq 1 ] ; then MESSAGE+="Восхитительно 🏆" ; fi
-	if [ $NUM -eq 2 ] ; then MESSAGE+="Изумительно 🍾" ; fi
+	if [ $NUM -eq 2 ] ; then MESSAGE+="чотка 🍾" ; fi
 	if [ $NUM -eq 3 ] ; then MESSAGE+="Волшебно 🪄" ; fi
 	if [ $NUM -eq 4 ] ; then MESSAGE+="Чудно 💫" ; fi
 	if [ $NUM -eq 5 ] ; then MESSAGE+="Потрясающе 🔥" ; fi 
@@ -38,7 +38,7 @@ if [ $BITRISE_BUILD_STATUS -eq 0 ] ; then
 	if [ $NUM -eq 8 ] ; then MESSAGE+="Великолепно 🤝" ; fi 
 	if [ $NUM -eq 9 ] ; then MESSAGE+="Превосходно 🤩" ; fi 
 	if [ $NUM -eq 10 ] ; then MESSAGE+="Блестяще 🎆" ; fi
-	if [ $NUM -eq 11 ] ; then MESSAGE+="🅰️🅱️🅾️🅱️🅰️" ; fi 
+	if [ $NUM -eq 11 ] ; then MESSAGE+="Ништяк." ; fi 
 	if [ $NUM -eq 12 ] ; then MESSAGE+="Замечательно 🎇" ; fi 
 	if [ $NUM -eq 13 ] ; then MESSAGE+="Красиво 🌠" ; fi
 	if [ $NUM -eq 14 ] ; then MESSAGE+="Прекрасно 🌟" ; fi 
@@ -47,6 +47,7 @@ if [ $BITRISE_BUILD_STATUS -eq 0 ] ; then
 	if [ $NUM -eq 17 ] ; then MESSAGE+="Норм." ; fi
 	if [ $NUM -eq 18 ] ; then MESSAGE+="Пойдет." ; fi
 	if [ ! -z "$BITRISE_GIT_MESSAGE" -a "$BITRISE_GIT_MESSAGE" != " " ] ; then MESSAGE+="\nСообщение: $BITRISE_GIT_MESSAGE" ; fi
+	MESSAGE+="\n\n $custom_message"
 fi
 
 if [ ! -z "$download_url" -a "$download_url" != " " ] ; then MESSAGE+="\n\nСсылки на скачивание ⬇️: $download_url" ; fi
